@@ -28,6 +28,10 @@
 
 if(isset($_POST['update'])){
     $Makh = $_SESSION['Makh'];
+    $_SESSION['HoTen'] = $_POST['customer_name'];
+    $_SESSION['email'] = $_POST['customer_email'];
+    $_SESSION['dienthoai'] = $_POST['customer_phone'];
+    $_SESSION['DiaChi'] = $_POST['customer_address'];
     $customer_name = $_POST['customer_name'];
     $customer_email = $_POST['customer_email'];
     $customer_phone = $_POST['customer_phone'];
@@ -36,8 +40,7 @@ if(isset($_POST['update'])){
     where makh='$Makh'";
     $run_update = mysqli_query($conn, $update_customer);
     if($run_update){
-        echo "<script>alert('Cập nhật thông tin cá nhân thành công. Mời đăng nhập lại.')</script>";
-        echo "<script>window.open('dangxuat.php', '_self')</script>";
+        echo "<script>alert('Cập nhật thông tin cá nhân thành công.')</script>";
     }
 }
 ?>
